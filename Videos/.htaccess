@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On
+
+# Izinkan akses jika referer dari domain sendiri
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?streamflix\.bamp\.live/ [NC]
+
+# Blokir akses langsung file video
+RewriteRule \.(mp4|mkv|avi|webm)$ - [F,NC]
